@@ -25,16 +25,29 @@ public class Book {
         this.title = title;
         this.author = author;
         this.pageCount = pageCount;
+        this.status = BookStatus.AVAILABLE;
     }
 
     public String getTitle(){
         return title;
     }
 
+    public BookStatus getStatus() {
+        return status;
+    }
     public String getAuthor(){
         return author;
     }
     public int getpageCount(){
         return pageCount;
     }
+
+    public void borrowBook() {
+        if (status == BookStatus.ON_LOAN) {
+            throw new IllegalStateException(
+                    "Book is already on loan");
+        }
+        status = BookStatus.ON_LOAN;
+    }
+
 }

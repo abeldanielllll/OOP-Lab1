@@ -5,13 +5,14 @@ public class Main {
     {
         Book book = new Book("Dune", "Frank Herbert", 412);
         book.borrowBook();
+        book.returnbook();
         try {
-            book.borrowBook();
+            book.returnbook();
         } catch (IllegalStateException ex) {
             System.out.println(ex.getMessage());
         }
         System.out.println(book.getStatus());
-    }
+        }
     }
 
 

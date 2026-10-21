@@ -7,6 +7,10 @@ public class LibraryService {
     private static final int MAX_LOAN_DAYS = 14;
     private final List<Book> books = new ArrayList<>();
 
+    public List<Book> getBooks() {
+        return new ArrayList<>(books);
+    }
+
     public boolean loanBook(String title, int loanDays) {
         if (loanDays < 1 || loanDays > MAX_LOAN_DAYS) {
             throw new IllegalArgumentException(
